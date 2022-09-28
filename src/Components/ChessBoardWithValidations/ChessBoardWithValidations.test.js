@@ -1,13 +1,9 @@
-import { render, screen, fireEvent } from '@testing-library/react';
-import {} from '@testing-library/jest-dom'
+import { render} from '@testing-library/react';
 import ChessBoardWithValidations from './ChessBoardWithValidations';
 import Chessboard from 'chessboardjsx'
-import { shallow, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
 
-configure({ adapter: new Adapter() });
-test('renders learn react link', async () => {
-  const wrapper = shallow(
+test('renders the chess board component', async () => {
+  const {getByTestId, debug} = render(
     <ChessBoardWithValidations>
         {
             ({
