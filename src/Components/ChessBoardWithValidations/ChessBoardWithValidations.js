@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import  Chess from "chess.js"; 
+import Chess from "chess.js"; 
 import {squareStyling} from '../../utils'
 
 export default class ChessBoardWithValidations extends Component {
@@ -67,7 +67,7 @@ export default class ChessBoardWithValidations extends Component {
     let move = this.game.move({
       from: sourceSquare,
       to: targetSquare,
-      promotion: "q" // always promote to a queen for example simplicity
+      promotion: "q"
     });
 
     // illegal move
@@ -118,7 +118,7 @@ export default class ChessBoardWithValidations extends Component {
     let move = this.game.move({
       from: this.state.pieceSquare,
       to: square,
-      promotion: "q" // always promote to a queen for example simplicity
+      promotion: "q"
     });
  
     // illegal move
