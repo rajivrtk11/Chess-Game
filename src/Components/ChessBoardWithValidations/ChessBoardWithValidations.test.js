@@ -39,17 +39,15 @@ test('renders the chess board component', () => {
     </ChessBoardWithValidations>
     );
 
-  fireEvent.click(screen.getByTestId('wP-h2') , new MouseEvent('click', {
+  const onsquareClick = fireEvent.click(screen.getByTestId('wP-h2') , new MouseEvent('click', {
     bubbles: true,
     cancelable: true,
   }))
-  const onsquareClick = jest.fn();
-  expect(onsquareClick.call.length).toBe(1)
+  expect(onsquareClick).toBe(true)
 
-  fireEvent.mouseOver(screen.getByTestId('wP-h2') , new MouseEvent('mouseOver', {
+ const onMouseOverSquareal =  fireEvent.mouseOver(screen.getByTestId('wP-h2') , new MouseEvent('mouseOver', {
     bubbles: true,
     cancelable: true,
   }))
-  const onMouseOverSquare = jest.fn();
-  expect(onMouseOverSquare.call.length).toBe(1)
+  expect(onMouseOverSquareal).toBe(true)
 });
